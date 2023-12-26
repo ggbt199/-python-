@@ -1,0 +1,35 @@
+import random
+import copy
+
+table = [[0]*4 for _ in range(4)]
+best_score = 0
+score = 0
+
+def score_record(score, best_score):
+    print(f"本局得分: {score}\n歷史最高: {best_score}")
+
+def new2or4():
+    global table
+    space_count = sum(row.count(0) for row in table)
+    add_count = 0
+
+    while add_count < space_count:
+        x = random.randint(0, 3)
+        y = random.randint(0, 3)
+
+        if table[x][y] == 0:
+            table[x][y] = 2 if random.randint(0, 4) < 4 else 4
+            break
+
+def print_table():
+    print("\n┌───────┬───────┬───────┬───────┐")
+    for i in range(4):
+        for j in range(4):
+            if table[i][j] != 0:
+                print("│{: ^6} ".format(table[i][j]), end="")
+            else:
+                print("│       ", end="")
+        print("│")
+        if i < 3:
+            print("├───────┼───────┼───────┼───────┤")
+    print("└───────┴───────┴───────┴───────┘")
