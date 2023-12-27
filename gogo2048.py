@@ -80,7 +80,7 @@ def w_move(): #向上
         new2or4()
 
 
-def d_move(): #向下 
+def d_move(): #向右 
     global score
     itemp=0
     New_num=0
@@ -166,7 +166,7 @@ def a_move(): #向左
         new2or4()
 
 
-def s_move(): #向右 
+def s_move(): #向下 
     global score
     itemp=0
     New_num=0
