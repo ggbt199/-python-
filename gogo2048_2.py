@@ -207,19 +207,14 @@ def s_move(): #向下
 	
     if New_num==1:
         new2or4()
+def not_game(table):
+    for x in table:
+        if x[0] !=0 and x[1 ]!=0 and x[2] !=0 and x[3 ]!=0:
+             print("gameover")
+        for s in x:
+            if s  ==32:
+                print("win")
 
-def not_game(state):
-   action = game_field.get_user_action(stdscr)
-   if action == 'Restart':
-        return 'Init' 
-   if action == 'Exit': 
-        return 'Exit' 
-  if game_field.move(action): # move successful 
-       if game_field.is_win():
-           return 'Win' 
-     if game_field.is_gameover(): 
-         return 'Gameover'
-        game_field = GameField(win=32) 
      
 
 char_point = " "
@@ -230,7 +225,7 @@ new2or4()
 while True:
     score_record(score, best_score)
     print_table()
-
+     not_game(table)   
     if game_over() == 1:
         char_point = input()
 
