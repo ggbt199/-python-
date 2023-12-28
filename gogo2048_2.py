@@ -211,11 +211,12 @@ def s_move(): #向下
 def not_game(table):
     for x in table:
         if x[0] !=0 and x[1 ]!=0 and x[2] !=0 and x[3 ]!=0:
-             print("gameover")
+            	print("gameover")
+		return 0
         for s in x:
             if s  ==32:
                 print("win")
-
+		return 0
 char_point = " "
 
 new2or4()
@@ -224,8 +225,8 @@ new2or4()
 while True:
     score_record(score, best_score)
     print_table()
-     not_game(table)   
-    if game_over() == 1:
+        
+    if not_game(table) == 1:
         char_point = input()
 
         if char_point == 'w':
