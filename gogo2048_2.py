@@ -207,6 +207,7 @@ def s_move(): #向下
 	
     if New_num==1:
         new2or4()
+	    
 def not_game(table):
     for x in table:
         if x[0] !=0 and x[1 ]!=0 and x[2] !=0 and x[3 ]!=0:
@@ -214,8 +215,6 @@ def not_game(table):
         for s in x:
             if s  ==32:
                 print("win")
-
-     
 
 char_point = " "
 
